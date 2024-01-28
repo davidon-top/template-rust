@@ -10,14 +10,14 @@ license = "{{license}}"
 repository = "git@github.com:{{username}}/{{project-name}}.git"
 
 [dependencies]
-{% if serde %}
+{%- if serde -%}
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-{% endif %}
-{% if tracing %}
+{%- endif -%}
+{%- if tracing -%}
 tracing = "0.1"
 tracing-subscriber = "0.3"
-{% endif %}
-{% if async %}
+{%- endif -%}
+{%- if async -%}
 tokio = { version = "1.0", features = ["full"] }
-{% endif %}
+{%- endif -%}
