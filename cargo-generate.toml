@@ -1,5 +1,5 @@
 [template]
-ignore = ["TEMPLATE.md"]
+ignore = ["README.md"]
 
 [hooks]
 pre = ["pre.rhai"]
