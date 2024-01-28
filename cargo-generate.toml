@@ -3,6 +3,7 @@ ignore = ["TEMPLATE.md"]
 
 [hooks]
 pre = ["pre.rhai"]
+post = ["post.rhai"]
 
 [placeholders.serde]
 type = "bool"
