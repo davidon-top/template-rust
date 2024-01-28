@@ -1,1 +1,1 @@
-# Template repo
+# {{project-name}}

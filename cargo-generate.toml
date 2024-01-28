@@ -1,0 +1,57 @@
+[template]
+ignore = ["TEMPLATE.md"]
+
+[hooks]
+pre = ["pre.rhai"]
+
+[placeholders.serde]
+type = "bool"
+prompt = "Serde?"
+default = true
+
+[placeholders.async]
+type = "bool"
+prompt = "Async?"
+default = true
+
+[placeholders.tracing]
+type = "bool"
+prompt = "Tracing?"
+default = true
+
+[placeholders.license]
+type = "string"
+prompt = "License?"
+default = "MIT"
+choices = ["MIT", "GPL3", "GLWTPL"]
+
+[conditional.'license == "MIT"']
+ignore = ["LICENSE-GLWTPL", "LICENSE-GPL3"]
+
+[conditional.'license == "GPL3"']
+ignore = ["LICENSE-GLWTPL", "LICENSE-MIT"]
+
+[conditional.'license == "GLWTPL"']
+ignore = ["LICENSE-MIT", "LICENSE-GPL3"]
+
+[conditional.'crate-type == "lib"']
+ignore = ["src/main.rs"]
+
+[conditional.'crate-type == "bin"']
+ignore = ["src/lib.rs"]
+
+[placeholders]
+ci = { type = "bool", prompt = "CI?", default = true }
+ci-release = { type = "bool", prompt = "CI release?", default = true }
+
+[conditional.'ci == false']
+ignore = ["github/workflows/ci.yaml"]
+
+[conditional.'ci == true'.placeholders]
+ci-tests = { type = "bool", prompt = "CI tests?", default = true }
+ci-fmt = { type = "bool", prompt = "CI fmt?", default = true }
+ci-clippy = { type = "bool", prompt = "CI clippy?", default = true }
+
+[conditional.'ci-release == false']
+ignore = ["github/workflows/release.yaml"]
+

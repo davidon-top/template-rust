@@ -1,17 +1,23 @@
 [package]
-name = "rust-template"
+name = "{{project-name}}"
 version = "0.1.0"
 edition = "2021"
-description = "A template for rust projects"
-authors = ["DavidOnTop <me@davidon.top>"]
+description = "{{project-name}}"
+authors = ["{{authors}}"]
 readme = "README.md"
-documentation = "https://docs.rs/rust-template"
-license = "MIT"
-repository = "git@github.com:davidon-top/rust-template.git"
+documentation = "https://docs.rs/{{project-name}}"
+license = "{{license}}"
+repository = "git@github.com:{{username}}/{{project-name}}.git"
 
 [dependencies]
+{% if serde %}
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+{% endif %}
+{% if tracing %}
 tracing = "0.1"
 tracing-subscriber = "0.3"
+{% endif %}
+{% if async %}
 tokio = { version = "1.0", features = ["full"] }
+{% endif %}
