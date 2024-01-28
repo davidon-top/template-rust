@@ -35,10 +35,10 @@ ignore = ["LICENSE-GLWTPL", "LICENSE-MIT"]
 [conditional.'license == "GLWTPL"']
 ignore = ["LICENSE-MIT", "LICENSE-GPL3"]
 
-[conditional.'crate-type == "lib"']
+[conditional.'crate_type == "lib"']
 ignore = ["src/main.rs"]
 
-[conditional.'crate-type == "bin"']
+[conditional.'crate_type == "bin"']
 ignore = ["src/lib.rs"]
 
 [placeholders]
