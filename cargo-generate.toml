@@ -42,8 +42,8 @@ ignore = ["src/main.rs"]
 ignore = ["src/lib.rs"]
 
 [placeholders]
-ci = { type = "bool", prompt = "CI?", default = true }
 ci-release = { type = "bool", prompt = "CI release?", default = true }
+ci = { type = "bool", prompt = "CI?", default = true }
 
 [conditional.'ci == false']
 ignore = [".github/workflows/ci.yaml"]
