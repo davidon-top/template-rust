@@ -46,7 +46,7 @@ ci = { type = "bool", prompt = "CI?", default = true }
 ci-release = { type = "bool", prompt = "CI release?", default = true }
 
 [conditional.'ci == false']
-ignore = ["github/workflows/ci.yaml"]
+ignore = [".github/workflows/ci.yaml"]
 
 [conditional.'ci == true'.placeholders]
 ci-tests = { type = "bool", prompt = "CI tests?", default = true }
@@ -54,5 +54,5 @@ ci-fmt = { type = "bool", prompt = "CI fmt?", default = true }
 ci-clippy = { type = "bool", prompt = "CI clippy?", default = true }
 
 [conditional.'ci-release == false']
-ignore = ["github/workflows/release.yaml"]
+ignore = [".github/workflows/release.yaml"]
 
