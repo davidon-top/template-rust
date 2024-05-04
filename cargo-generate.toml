@@ -41,18 +41,18 @@ ignore = ["src/main.rs"]
 [conditional.'crate_type == "bin"']
 ignore = ["src/lib.rs"]
 
-[placeholders]
-ci-release = { type = "bool", prompt = "CI release?", default = true }
-ci = { type = "bool", prompt = "CI?", default = true }
-
-[conditional.'ci == false']
-ignore = [".github/workflows/ci.yaml"]
-
-[conditional.'ci == true'.placeholders]
-ci-tests = { type = "bool", prompt = "CI tests?", default = true }
-ci-fmt = { type = "bool", prompt = "CI fmt?", default = true }
-ci-clippy = { type = "bool", prompt = "CI clippy?", default = true }
-
-[conditional.'ci-release == false']
-ignore = [".github/workflows/release.yaml"]
-
+# [placeholders]
+# ci-release = { type = "bool", prompt = "CI release?", default = true }
+# ci = { type = "bool", prompt = "CI?", default = true }
+#
+# [conditional.'ci == false']
+# ignore = [".github/workflows/ci.yaml"]
+#
+# [conditional.'ci == true'.placeholders]
+# ci-tests = { type = "bool", prompt = "CI tests?", default = true }
+# ci-fmt = { type = "bool", prompt = "CI fmt?", default = true }
+# ci-clippy = { type = "bool", prompt = "CI clippy?", default = true }
+#
+# [conditional.'ci-release == false']
+# ignore = [".github/workflows/release.yaml"]
+#
