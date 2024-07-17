@@ -20,6 +20,11 @@ type = "bool"
 prompt = "Tracing?"
 default = true
 
+[placeholders.axum]
+type = "bool"
+prompt = "axum?"
+default = true
+
 [placeholders.license]
 type = "string"
 prompt = "License?"
